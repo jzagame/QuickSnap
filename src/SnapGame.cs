@@ -32,6 +32,10 @@ namespace CardGames
  					SwinGame.KeyTyped (KeyCode.vk_RSHIFT)) 
 				{ 
 				//TODO: add sound effects 
+				SwinGame.LoadSoundEffectNamed ("Slap1", "slap1.wav"); 
+				SwinGame.LoadSoundEffectNamed ("Slap2", "slap2.wav"); 
+				SwinGame.PlaySoundEffect ("Slap1"); 
+				SwinGame.PlaySoundEffect ("Slap2");
 				} 
 				else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT)) 
 				{ 
@@ -70,6 +74,10 @@ namespace CardGames
 
 			// Draw the back of the cards... to represent the deck
 			SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), 52, 155, 153);
+			
+			//Change the fonts of the game
+			SwinGame.LoadFontNamed ("GameFont", "Chunkfive.otf", 24); 
+			SwinGame.DrawText ("Player 1 score: " + myGame.Score(0), Color.Red, "GameFont",0, 30);
 
 			//Draw onto the screen
 			SwinGame.RefreshScreen(60);
